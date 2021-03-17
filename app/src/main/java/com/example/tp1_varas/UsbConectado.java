@@ -7,7 +7,8 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.widget.Toast;
 
-public class UsbConectado extends BroadcastReceiver {
+    //Creo el broadcast
+    public class UsbConectado extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         IntentFilter filter = new IntentFilter();
@@ -15,8 +16,7 @@ public class UsbConectado extends BroadcastReceiver {
         boolean conectado = (intent.getExtras().getBoolean("connected"));
         if (conectado) {
             Toast.makeText(context, "Iniciando llamada", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(Intent.ACTION_CALL);
-            i.setData(Uri.parse("tel: "+"2657224499"));
+            Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel: "+" 1164369842")); //cambio de número
 
             context.startActivity(i);
 

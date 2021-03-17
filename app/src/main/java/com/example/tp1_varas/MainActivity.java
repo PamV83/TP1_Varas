@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
             requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1000);
         }
-    //este es un cambio..
     }
 
+    //Registro de permiso dinámicamente
     @Override
     protected void onResume() {
         super.onResume();
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //De-registro el permiso
     @Override
     protected void onPause() {
         super.onPause();
